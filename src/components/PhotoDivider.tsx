@@ -36,7 +36,7 @@ export function PhotoDivider({ overlayText, placeholder = "Photo", src }: Props)
           src={src}
           alt=""
           style={{ y }}
-          className="absolute inset-0 -top-[25px] -bottom-[25px] h-[calc(100%+50px)] w-full object-cover will-change-transform"
+          className="vintage absolute inset-0 -top-[25px] -bottom-[25px] h-[calc(100%+50px)] w-full object-cover will-change-transform"
         />
       ) : (
         <div className="flex h-full w-full items-center justify-center">

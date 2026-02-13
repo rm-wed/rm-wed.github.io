@@ -33,3 +33,8 @@ body {
   background: #c4756e;
 }
 
+/* ─── Vintage warmth on divider & venue photos (not the hero) ─── */
+img.vintage {
+  filter: sepia(0.15) saturate(0.85) brightness(0.95) contrast(1.05);
+}
+

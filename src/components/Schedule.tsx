@@ -54,7 +54,7 @@ function VenueCard({ venue }: { venue: Venue }) {
       <img
         src={venue.image}
         alt={venue.name}
-        className="h-56 w-full object-cover"
+        className="vintage h-56 w-full object-cover"
       />
 
       <div className="px-6 py-6">
