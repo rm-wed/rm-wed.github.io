@@ -16,7 +16,7 @@ export default function App() {
       <WeddingInfo />
 
       {/* Photo divider → love story */}
-      <PhotoDivider src="/images/landscape_1.jpg" />
+      <PhotoDivider src="/images/landscape_1_.jpg" />
 
       {/* 3 — Our love story */}
       <LoveStory />
