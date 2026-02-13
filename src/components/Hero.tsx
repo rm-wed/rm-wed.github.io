@@ -20,7 +20,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative h-dvh w-full overflow-hidden bg-parchment-200"
+      className="relative h-dvh w-full overflow-hidden bg-black"
     >
       {/* ── Couple photo with parallax ── */}
       <motion.img
@@ -35,7 +35,7 @@ export function Hero() {
 
       {/* ── Names ── */}
       <motion.div
-        className="absolute inset-x-0 bottom-16 flex flex-col items-center"
+        className="absolute inset-x-0 bottom-16 flex flex-col items-center pb-[env(safe-area-inset-bottom)]"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}

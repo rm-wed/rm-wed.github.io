@@ -11,7 +11,7 @@ const contacts = [
 
 export function Contact() {
   return (
-    <section className="relative z-10 bg-parchment px-6 py-20 text-center shadow-[0_-10px_30px_rgba(0,0,0,0.18),0_10px_30px_rgba(0,0,0,0.18)]">
+    <section className="relative z-10 bg-parchment px-6 py-20 pb-[calc(5rem+env(safe-area-inset-bottom))] text-center shadow-[0_-10px_30px_rgba(0,0,0,0.18),0_10px_30px_rgba(0,0,0,0.18)]">
       <ScrollReveal>
         <h2 className="font-heading text-2xl font-semibold tracking-wide text-wine sm:text-3xl">
           Contact Us

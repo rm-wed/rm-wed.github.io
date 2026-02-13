@@ -5,6 +5,8 @@
 /* ─── Base resets ─── */
 html {
   scroll-behavior: smooth;
+  /* Black behind the iOS status bar & home-indicator bar so images bleed edge-to-edge */
+  background-color: #000;
 }
 
 body {
