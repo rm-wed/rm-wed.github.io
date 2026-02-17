@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { useCountdown } from "../hooks/useCountdown";
 import { WEDDING_DATE } from "../config";
 import { ScrollReveal } from "./ScrollReveal";
 import { Ornament } from "./Ornament";
+import { RsvpModal } from "./RsvpModal";
 
 export function WeddingInfo() {
   const time = useCountdown(WEDDING_DATE);
+  const [rsvpOpen, setRsvpOpen] = useState(false);
 
   return (
     <section className="relative z-10 bg-parchment px-6 py-20 text-center shadow-[0_-10px_30px_rgba(0,0,0,0.18),0_10px_30px_rgba(0,0,0,0.18)]">
@@ -43,11 +46,14 @@ export function WeddingInfo() {
       <ScrollReveal className="mt-10" delay={0.35}>
         <button
           type="button"
+          onClick={() => setRsvpOpen(true)}
           className="rounded-full bg-rose px-12 py-3.5 font-heading text-lg font-medium tracking-wide text-white shadow-md transition-all duration-300 hover:bg-rose-dark hover:shadow-lg active:scale-[.97]"
         >
           RSVP
         </button>
       </ScrollReveal>
+
+      <RsvpModal open={rsvpOpen} onClose={() => setRsvpOpen(false)} />
     </section>
   );
 }

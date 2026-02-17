@@ -27,7 +27,7 @@ export function Hero() {
         src="/images/couple_photo.JPG"
         alt="Rim & Mohamad"
         style={{ y }}
-        className="absolute inset-0 h-[calc(100%+40px)] w-full object-cover will-change-transform"
+        className="absolute inset-0 h-[calc(100%+40px)] w-full object-cover object-[center_25%] will-change-transform"
       />
 
       {/* ── Bottom gradient for text legibility ── */}
