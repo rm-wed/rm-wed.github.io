@@ -15,15 +15,15 @@ export function WeddingInfo() {
       <ScrollReveal>
         <Ornament />
         <h2 className="mt-6 font-heading text-3xl font-semibold tracking-wide text-wine sm:text-4xl">
-          We are getting married!
+          Nous nous marions !
         </h2>
       </ScrollReveal>
 
       {/* Countdown */}
       <ScrollReveal className="mt-12" delay={0.15}>
         <div className="flex justify-center gap-4">
-          <CountdownUnit value={time.days} label="Days" />
-          <CountdownUnit value={time.hours} label="Hours" />
+          <CountdownUnit value={time.days} label="Jours" />
+          <CountdownUnit value={time.hours} label="Heures" />
           <CountdownUnit value={time.minutes} label="Min" />
           <CountdownUnit value={time.seconds} label="Sec" />
         </div>
@@ -33,7 +33,7 @@ export function WeddingInfo() {
       <ScrollReveal className="mt-10" delay={0.25}>
         <div className="inline-flex items-center rounded-full border border-rose/30 bg-parchment-50 px-7 py-3 shadow-sm">
           <span className="font-body text-base font-medium text-wine">
-            30 · 05 · 2026
+            13 · 06 · 2026
           </span>
           <span className="mx-4 inline-block h-4 w-px bg-rose/40" />
           <span className="font-body text-base font-medium text-wine">

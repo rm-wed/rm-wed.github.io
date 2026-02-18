@@ -57,19 +57,19 @@ export function RsvpModal({ open, onClose }: Props) {
 
   async function handleSubmit() {
     if (!firstName.trim() || !lastName.trim()) {
-      setError("Please enter your first and last name.");
+      setError("Veuillez entrer votre prénom et votre nom.");
       return;
     }
     if (!attendance) {
-      setError("Please let us know if you will attend.");
+      setError("Veuillez indiquer si vous serez présent(e).");
       return;
     }
     if (plusOneAllowed && attendance !== "no" && !plusOne) {
-      setError("Please let us know about your +1.");
+      setError("Veuillez indiquer si vous viendrez accompagné(e).");
       return;
     }
     if (plusOneAllowed && plusOne === "yes" && (!plusFirstName.trim() || !plusLastName.trim())) {
-      setError("Please enter the first and last name of your +1.");
+      setError("Veuillez entrer le prénom et le nom de votre accompagnant(e).");
       return;
     }
 
@@ -96,7 +96,7 @@ export function RsvpModal({ open, onClose }: Props) {
 
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please try again.");
+      setError("Une erreur est survenue. Veuillez réessayer.");
     } finally {
       setSubmitting(false);
     }
@@ -159,18 +159,18 @@ export function RsvpModal({ open, onClose }: Props) {
               >
                 <span className="text-4xl">💌</span>
                 <h3 className="font-heading text-2xl font-semibold text-wine">
-                  Thank you!
+                  Merci !
                 </h3>
                 <p className="font-body text-base leading-relaxed text-wine-light">
-                  Your RSVP has been received.
+                  Votre RSVP a bien été reçu.
                   <br />
-                  We can't wait to celebrate with you!
+                  Nous avons hâte de célébrer avec vous !
                 </p>
                 <button
                   onClick={handleClose}
                   className="mt-4 rounded-full border border-rose/30 px-8 py-2.5 font-heading text-sm font-medium tracking-wide text-wine transition-colors hover:bg-rose-light/20"
                 >
-                  Close
+                  Fermer
                 </button>
               </motion.div>
             ) : (
@@ -183,12 +183,12 @@ export function RsvpModal({ open, onClose }: Props) {
                 {/* Name fields */}
                 <div className="grid grid-cols-2 gap-3">
                   <Input
-                    label="First name"
+                    label="Prénom"
                     value={firstName}
                     onChange={setFirstName}
                   />
                   <Input
-                    label="Last name"
+                    label="Nom"
                     value={lastName}
                     onChange={setLastName}
                   />
@@ -197,20 +197,20 @@ export function RsvpModal({ open, onClose }: Props) {
                 {/* Will you attend? */}
                 <fieldset className="flex flex-col gap-4">
                   <legend className="mb-2 font-body text-base font-medium tracking-wide text-wine">
-                    Will you attend?
+                    Serez-vous présent(e) ?
                   </legend>
                   <div className="flex gap-2">
                     <ToggleBtn
                       active={attendance === "yes"}
                       onClick={() => setAttendance("yes")}
                     >
-                      Yes
+                      Oui
                     </ToggleBtn>
                     <ToggleBtn
                       active={attendance === "not-sure"}
                       onClick={() => setAttendance("not-sure")}
                     >
-                      Not sure
+                      Pas sûr(e)
                     </ToggleBtn>
                     <ToggleBtn
                       active={attendance === "no"}
@@ -221,7 +221,7 @@ export function RsvpModal({ open, onClose }: Props) {
                         setPlusLastName("");
                       }}
                     >
-                      No
+                      Non
                     </ToggleBtn>
                   </div>
                 </fieldset>
@@ -235,14 +235,14 @@ export function RsvpModal({ open, onClose }: Props) {
                     transition={{ duration: 0.25 }}
                   >
                     <legend className="mb-2 font-body text-base font-medium tracking-wide text-wine">
-                      Will you have a +1?
+                      Viendrez-vous avec un(e) accompagnant(e) ?
                     </legend>
                     <div className="flex gap-2">
                       <ToggleBtn
                         active={plusOne === "yes"}
                         onClick={() => setPlusOne("yes")}
                       >
-                        Yes
+                        Oui
                       </ToggleBtn>
                       <ToggleBtn
                         active={plusOne === "not-sure"}
@@ -252,7 +252,7 @@ export function RsvpModal({ open, onClose }: Props) {
                           setPlusLastName("");
                         }}
                       >
-                        Not sure
+                        Pas sûr(e)
                       </ToggleBtn>
                       <ToggleBtn
                         active={plusOne === "no"}
@@ -262,7 +262,7 @@ export function RsvpModal({ open, onClose }: Props) {
                           setPlusLastName("");
                         }}
                       >
-                        No
+                        Non
                       </ToggleBtn>
                     </div>
                   </motion.fieldset>
@@ -277,12 +277,12 @@ export function RsvpModal({ open, onClose }: Props) {
                     transition={{ duration: 0.25 }}
                   >
                     <Input
-                      label="+1 First name"
+                      label="Prénom +1"
                       value={plusFirstName}
                       onChange={setPlusFirstName}
                     />
                     <Input
-                      label="+1 Last name"
+                      label="Nom +1"
                       value={plusLastName}
                       onChange={setPlusLastName}
                     />
@@ -302,7 +302,7 @@ export function RsvpModal({ open, onClose }: Props) {
                   disabled={submitting}
                   className="mt-2 w-full rounded-full bg-rose px-8 py-3.5 font-heading text-lg font-medium tracking-wide text-white shadow-md transition-all duration-300 hover:bg-rose-dark hover:shadow-lg active:scale-[.97] disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {submitting ? "Sending…" : "Submit"}
+                  {submitting ? "Envoi…" : "Envoyer"}
                 </button>
               </div>
             )}

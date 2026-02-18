@@ -33,8 +33,8 @@ export default function App() {
       {/* 5 — Registry */}
       <Registry />
 
-      {/* Final photo with "See you!" overlay */}
-      <PhotoDivider src="/images/see_you.jpg" overlayText="See you!" />
+      {/* Final photo with "À très vite" overlay */}
+      <PhotoDivider src="/images/see_you.jpg" overlayText="À très vite pour célébrer ensemble !" />
 
       {/* 6 — Contact */}
       <Contact />
