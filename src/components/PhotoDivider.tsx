@@ -48,8 +48,11 @@ export function PhotoDivider({ overlayText, placeholder = "Photo", src }: Props)
 
       {/* Optional overlay text */}
       {overlayText && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/35">
-          <span className="font-script text-5xl text-white drop-shadow-lg sm:text-6xl">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/35 px-4">
+          <span
+            className="text-center font-script text-white drop-shadow-lg"
+            style={{ fontSize: "clamp(1.5rem, 7vw, 3.75rem)", whiteSpace: "nowrap" }}
+          >
             {overlayText}
           </span>
         </div>
