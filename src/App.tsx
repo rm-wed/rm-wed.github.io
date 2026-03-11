@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Hero } from "./components/Hero";
 import { WeddingInfo } from "./components/WeddingInfo";
 import { LoveStory } from "./components/LoveStory";
@@ -7,13 +8,21 @@ import { Contact } from "./components/Contact";
 import { PhotoDivider } from "./components/PhotoDivider";
 
 export default function App() {
+  const { plusOneAllowed, mairieInvited } = useMemo(() => {
+    const hash = window.location.hash;
+    return {
+      plusOneAllowed: hash.includes("i"),
+      mairieInvited: hash.includes("j"),
+    };
+  }, []);
+
   return (
     <main className="flex min-h-dvh flex-col">
       {/* 1 — Hero: full-screen couple photo */}
       <Hero />
 
       {/* 2 — Countdown, date pill, RSVP */}
-      <WeddingInfo />
+      <WeddingInfo plusOneAllowed={plusOneAllowed} mairieInvited={mairieInvited} />
 
       {/* Photo divider → love story */}
       <PhotoDivider src="/images/landscape_1_.jpg" />
@@ -25,7 +34,7 @@ export default function App() {
       <PhotoDivider src="/images/landscape_2.JPG" />
 
       {/* 4 — Schedule */}
-      <Schedule />
+      <Schedule showMairie={mairieInvited} />
 
       {/* Photo divider → registry */}
       <PhotoDivider src="/images/landscape_3.jpg" />

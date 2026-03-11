@@ -28,14 +28,18 @@ const venues: Venue[] = [
     address: "Chem. du Mas de Causse\nÀ l'Estelle, 34970 Lattes",
     mapsUrl: "https://maps.google.com/?q=Chateau+Paloma+Lattes",
     schedule: [
-      { time: "17h00", description: "Que la fête commence au Château Paloma !\nArrivée triomphale des mariés, gourmandises à savourer \net bulles à partager dans l'espace privé Lagrange" },
+      { time: "17h00", description: "Que la fête commence au Château Paloma !\nArrivée des mariés, gourmandises à savourer \net bulles à partager dans l'espace privé Lagrange" },
       { time: "19h00 – 21h00", description: "Dîner convivial et raffiné au restaurant du Château Paloma" },
       { time: "21h00 – 1h00", description: "La soirée s'enflamme ! \nDanse, musique et rires pour célébrer ensemble jusqu'au bout de la nuit" },
     ],
   },
 ];
 
-export function Schedule() {
+export function Schedule({ showMairie = false }: { showMairie?: boolean }) {
+  const displayed = showMairie
+    ? venues
+    : venues.filter((v) => v.name !== "Mairie de Montpellier");
+
   return (
     <section className="relative z-10 bg-parchment px-6 py-20 text-center shadow-[0_-10px_30px_rgba(0,0,0,0.18),0_10px_30px_rgba(0,0,0,0.18)]">
       <ScrollReveal>
@@ -46,7 +50,7 @@ export function Schedule() {
       </ScrollReveal>
 
       <div className="mx-auto mt-14 flex max-w-lg flex-col gap-10">
-        {venues.map((v, i) => (
+        {displayed.map((v, i) => (
           <ScrollReveal key={v.name} delay={0.15 * i}>
             <VenueCard venue={v} />
           </ScrollReveal>

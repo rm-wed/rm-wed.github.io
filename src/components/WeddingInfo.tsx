@@ -5,7 +5,12 @@ import { ScrollReveal } from "./ScrollReveal";
 import { Ornament } from "./Ornament";
 import { RsvpModal } from "./RsvpModal";
 
-export function WeddingInfo() {
+interface Props {
+  plusOneAllowed: boolean;
+  mairieInvited: boolean;
+}
+
+export function WeddingInfo({ plusOneAllowed, mairieInvited }: Props) {
   const time = useCountdown(WEDDING_DATE);
   const [rsvpOpen, setRsvpOpen] = useState(false);
 
@@ -53,7 +58,12 @@ export function WeddingInfo() {
         </button>
       </ScrollReveal>
 
-      <RsvpModal open={rsvpOpen} onClose={() => setRsvpOpen(false)} />
+      <RsvpModal
+        open={rsvpOpen}
+        onClose={() => setRsvpOpen(false)}
+        plusOneAllowed={plusOneAllowed}
+        mairieInvited={mairieInvited}
+      />
     </section>
   );
 }

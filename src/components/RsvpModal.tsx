@@ -1,17 +1,19 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
   open: boolean;
   onClose: () => void;
+  plusOneAllowed: boolean;
+  mairieInvited: boolean;
 }
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwMn2XCOIZ2dyLUKpHgVQOKrI8DmvW20gOYcPQ7TaVk5NMgXjoriOL2PmiUf0wqNxgT/exec"; // ← replace after deploying
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwB8oyeGzNUP8qu5G546v4KRwjHzk5ozYW1nK4YQ-wzHoj-FA4Q_FvUeICz8E5FJb9s/exec"; // ← replace after deploying
 
 type Attendance = "yes" | "not-sure" | "no" | null;
 type PlusOne = "yes" | "not-sure" | "no" | null;
 
-export function RsvpModal({ open, onClose }: Props) {
+export function RsvpModal({ open, onClose, plusOneAllowed, mairieInvited }: Props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [attendance, setAttendance] = useState<Attendance>(null);
@@ -21,12 +23,6 @@ export function RsvpModal({ open, onClose }: Props) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  // Check URL for +1 permission: yoursite.com/#i
-  const plusOneAllowed = useMemo(
-    () => window.location.hash === "#i",
-    [],
-  );
 
   // Lock body scroll while modal is open
   useEffect(() => {
@@ -87,6 +83,7 @@ export function RsvpModal({ open, onClose }: Props) {
       const now = new Date();
       const ts = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")} ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
       formData.append("timestamp", ts);
+      formData.append("mairieInvited", mairieInvited ? "yes" : "no");
 
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",

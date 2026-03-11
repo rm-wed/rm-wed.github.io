@@ -8,7 +8,7 @@ export function Registry() {
       <ScrollReveal>
         <Ornament />
         <h2 className="mt-6 font-heading text-3xl font-semibold tracking-wide text-wine sm:text-4xl">
-          Registre
+          Cagnotte de mariage
         </h2>
       </ScrollReveal>
 
@@ -16,11 +16,10 @@ export function Registry() {
         <p className="font-body text-lg leading-relaxed text-wine-light">
           Nous avons hâte de partager ce jour unique avec vous !
           <br />
-          Votre présence est le plus beau des cadeaux.
+          Si vous souhaitez nous faire un petit présent, veuillez cliquer sur
+          le lien ci-dessous.
           <br />
-          Si vous souhaitez nous faire un petit présent, vous pouvez ajouter une
-          touche de magie à cette journée et contribuer à rendre chaque moment
-          encore plus joyeux !
+          Votre présence est le plus beau des cadeaux.
         </p>
       </ScrollReveal>
 
