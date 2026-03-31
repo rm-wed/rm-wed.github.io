@@ -10,8 +10,8 @@ interface Props {
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwB8oyeGzNUP8qu5G546v4KRwjHzk5ozYW1nK4YQ-wzHoj-FA4Q_FvUeICz8E5FJb9s/exec"; // ← replace after deploying
 
-type Attendance = "yes" | "not-sure" | "no" | null;
-type PlusOne = "yes" | "not-sure" | "no" | null;
+type Attendance = "yes" | "no" | null;
+type PlusOne = "yes" | "no" | null;
 
 export function RsvpModal({ open, onClose, plusOneAllowed, mairieInvited }: Props) {
   const [firstName, setFirstName] = useState("");
@@ -204,12 +204,6 @@ export function RsvpModal({ open, onClose, plusOneAllowed, mairieInvited }: Prop
                       Oui
                     </ToggleBtn>
                     <ToggleBtn
-                      active={attendance === "not-sure"}
-                      onClick={() => setAttendance("not-sure")}
-                    >
-                      Pas sûr(e)
-                    </ToggleBtn>
-                    <ToggleBtn
                       active={attendance === "no"}
                       onClick={() => {
                         setAttendance("no");
@@ -240,16 +234,6 @@ export function RsvpModal({ open, onClose, plusOneAllowed, mairieInvited }: Prop
                         onClick={() => setPlusOne("yes")}
                       >
                         Oui
-                      </ToggleBtn>
-                      <ToggleBtn
-                        active={plusOne === "not-sure"}
-                        onClick={() => {
-                          setPlusOne("not-sure");
-                          setPlusFirstName("");
-                          setPlusLastName("");
-                        }}
-                      >
-                        Pas sûr(e)
                       </ToggleBtn>
                       <ToggleBtn
                         active={plusOne === "no"}

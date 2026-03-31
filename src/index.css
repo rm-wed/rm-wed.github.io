@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── RSVP pulse glow ─── */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(196,117,110,0.3), 0 0 24px rgba(196,117,110,0.15);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(196,117,110,0.85), 0 0 60px rgba(196,117,110,0.5), 0 0 90px rgba(196,117,110,0.25);
+    transform: scale(1.08);
+  }
+}
+.rsvp-pulse {
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+.rsvp-pulse:hover {
+  animation-play-state: paused;
+  transform: scale(1.1);
+}
+
 /* ─── Base resets ─── */
 html {
   scroll-behavior: smooth;

@@ -47,12 +47,26 @@ export function WeddingInfo({ plusOneAllowed, mairieInvited }: Props) {
         </div>
       </ScrollReveal>
 
-      {/* RSVP */}
+      {/* RSVP deadline */}
       <ScrollReveal className="mt-10" delay={0.35}>
+        <div className="mx-auto max-w-sm rounded-lg border border-rose/50 bg-rose/10 px-5 py-3 shadow-sm">
+          <p className="font-heading text-base font-semibold tracking-wide text-wine sm:text-lg">
+            Merci de confirmer votre présence
+            <br />
+            avant le{" "}
+            <span className="underline decoration-rose decoration-2 underline-offset-4">
+              20 avril 2026
+            </span>
+          </p>
+        </div>
+      </ScrollReveal>
+
+      {/* RSVP */}
+      <ScrollReveal className="mt-6" delay={0.4}>
         <button
           type="button"
           onClick={() => setRsvpOpen(true)}
-          className="rounded-full bg-rose px-12 py-3.5 font-heading text-lg font-medium tracking-wide text-white shadow-md transition-all duration-300 hover:bg-rose-dark hover:shadow-lg active:scale-[.97]"
+          className="rsvp-pulse rounded-full bg-rose px-14 py-4 font-heading text-xl font-semibold tracking-widest text-white transition-colors duration-300 hover:bg-rose-dark"
         >
           RSVP
         </button>

@@ -29,8 +29,8 @@ const venues: Venue[] = [
     mapsUrl: "https://maps.google.com/?q=Chateau+Paloma+Lattes",
     schedule: [
       { time: "17h00", description: "Que la fête commence au Château Paloma !\nArrivée des mariés, gourmandises à savourer \net bulles à partager dans l'espace privé Lagrange" },
-      { time: "19h00 – 21h00", description: "Dîner convivial et raffiné au restaurant du Château Paloma" },
-      { time: "21h00 – 1h00", description: "La soirée s'enflamme ! \nDanse, musique et rires pour célébrer ensemble jusqu'au bout de la nuit" },
+      { time: "19h00 – 21h00", description: "Dîner convivial au restaurant du Château Paloma" },
+      { time: "21h00 – 1h30", description: "La soirée s'enflamme ! \nDanse, musique et rires pour célébrer ensemble jusqu'au bout de la nuit" },
     ],
   },
 ];
