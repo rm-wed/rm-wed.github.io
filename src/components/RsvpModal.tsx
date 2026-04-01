@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 interface Props {
   open: boolean;
@@ -99,7 +100,7 @@ export function RsvpModal({ open, onClose, plusOneAllowed, mairieInvited }: Prop
     }
   }
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
@@ -290,7 +291,8 @@ export function RsvpModal({ open, onClose, plusOneAllowed, mairieInvited }: Prop
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 }
 
