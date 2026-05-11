@@ -55,7 +55,7 @@ export function WeddingInfo({ plusOneAllowed, mairieInvited }: Props) {
             <br />
             avant le{" "}
             <span className="underline decoration-rose decoration-2 underline-offset-4">
-              20 avril 2026
+              27 mai 2026
             </span>
           </p>
         </div>
@@ -68,7 +68,7 @@ export function WeddingInfo({ plusOneAllowed, mairieInvited }: Props) {
           onClick={() => setRsvpOpen(true)}
           className="rsvp-pulse rounded-full bg-rose px-14 py-4 font-heading text-xl font-semibold tracking-widest text-white transition-colors duration-300 hover:bg-rose-dark"
         >
-          RSVP
+          Réserver
         </button>
       </ScrollReveal>
 
